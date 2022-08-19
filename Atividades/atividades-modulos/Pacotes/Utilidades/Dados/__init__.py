@@ -1,13 +1,9 @@
 def leia(msg):
     ok = False
-    valor = 0
-    while True:
-        n = str(input(msg)).replace(',','.')
-        if n.isnumeric():
-            valor = int(n)
-            ok = True
+    while not ok:
+        entrada = str(input(msg)).replace(',','.').strip()
+        if entrada.isalpha() or entrada == "":
+            print(f'\033[1;31mERRO: {entrada} não é um preço válido!')
         else:
-            print("\033[1;31mErro, digite um número Válido!!!\033[m")
-        if ok:
-            break
-    return valor
+            ok = True
+            return float(entrada)
