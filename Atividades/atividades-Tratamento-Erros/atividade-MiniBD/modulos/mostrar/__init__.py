@@ -4,7 +4,7 @@ def valida(num):
             nome = str(input('Digite o nome: '))
             idade = int(input('Digite a idade: '))
             sexo = str(input('Digite qual o sexo [F/M]: '))
-            texto = codigo.write(f'{nome:<40}{idade:<20}{sexo}\n')
+            texto = codigo.write(f'{nome:<40}{idade:<20}{sexo.upper()}\n')
     elif num == 2:
         with open('informacoes.txt', 'r', encoding='utf-8') as codigo:
             mensagem = codigo.readlines()
